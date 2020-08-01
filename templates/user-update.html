@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1>User Add</h1>
+    <form method="post">
+        <input type="text" name="username" placeholder="username" class="form-control" value="{{ user.username }}"><br>
+        <input type="text" name="password" placeholder="password" class="form-control" value="{{ user.password }}"><br>
+        <input type="submit" value="Add" class="btn btn-success ">
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container mt-5">
+  <a class="btn btn-primary" href="/user-add">Add user</a><br><br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">username</th>
+        <th scope="col">password</th>
+        <th scope="col">date</th>
+        <th scope="col">edit</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for elem in userlist %}
+        <tr>
+          <th scope="row">{{ elem.id }}</th>
+          <td>{{ elem.username }}</td>
+          <td>{{ elem.password }}</td>
+          <td>{{ elem.date }}</td>
+          <td><a href="/user-list/{{elem.id}}/update" class="btn btn-primary">Edit</a></td>
+          <td><a href="/user-list/{{elem.id}}/del" class="btn btn-danger">Delete</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
